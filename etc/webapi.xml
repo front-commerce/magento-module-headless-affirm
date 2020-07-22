@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/frontcommerce/affirm/order/init" method="POST">
+        <service class="FrontCommerce\HeadlessAffirm\Api\AffirmHeadlessCheckoutManagerInterface" method="initHeadlessCheckout"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+        <data>
+            <parameter name="customerId">%customer_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/frontcommerce/affirm/publicCheckoutConfigs" method="GET">
+        <service class="FrontCommerce\HeadlessAffirm\Api\AffirmHeadlessCheckoutManagerInterface" method="getPublicCheckoutConfigs"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+</routes>
