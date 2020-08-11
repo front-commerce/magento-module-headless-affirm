@@ -11,6 +11,7 @@ use Magento\Framework\Exception\AuthorizationException;
 use Magento\Framework\Exception\NotFoundException;
 use Magento\Framework\ObjectManagerInterface;
 use Magento\Quote\Api\Data\CartInterface;
+use Magento\Quote\Model\ResourceModel\Quote\Payment\CollectionFactory;
 use Magento\Sales\Model\Order\Payment;
 use FrontCommerce\Integration\Api\Data\ConfigInterfaceFactory;
 
@@ -20,6 +21,10 @@ class AffirmHeadlessCheckoutManager extends AffirmCheckoutManager implements Aff
      * @var ConfigInterfaceFactory
      */
     private $configFactory;
+    /**
+     * @var CollectionFactory
+     */
+    private $quotePaymentCollectionFactory;
 
     public function __construct(
         Session $checkoutSession,
@@ -29,7 +34,7 @@ class AffirmHeadlessCheckoutManager extends AffirmCheckoutManager implements Aff
         ObjectManagerInterface $objectManager,
         FinancingProgram $helper,
         \Astound\Affirm\Model\Config $affirmConfig,
-        \Magento\Quote\Model\ResourceModel\Quote\Payment\CollectionFactory $quotePaymentCollectionFactory,
+        CollectionFactory $quotePaymentCollectionFactory,
         ConfigInterfaceFactory $configFactory
     )
     {
@@ -41,8 +46,8 @@ class AffirmHeadlessCheckoutManager extends AffirmCheckoutManager implements Aff
             $objectManager,
             $helper,
             $affirmConfig,
-            $quotePaymentCollectionFactory
         );
+        $this->quotePaymentCollectionFactory = $quotePaymentCollectionFactory;
         $this->configFactory = $configFactory;
     }
 
