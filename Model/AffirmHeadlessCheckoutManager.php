@@ -36,8 +36,7 @@ class AffirmHeadlessCheckoutManager extends AffirmCheckoutManager implements Aff
         \Astound\Affirm\Model\Config $affirmConfig,
         CollectionFactory $quotePaymentCollectionFactory,
         ConfigInterfaceFactory $configFactory
-    )
-    {
+    ) {
         parent::__construct(
             $checkoutSession,
             $quoteRepository,
@@ -45,7 +44,7 @@ class AffirmHeadlessCheckoutManager extends AffirmCheckoutManager implements Aff
             $moduleResource,
             $objectManager,
             $helper,
-            $affirmConfig,
+            $affirmConfig
         );
         $this->quotePaymentCollectionFactory = $quotePaymentCollectionFactory;
         $this->configFactory = $configFactory;
