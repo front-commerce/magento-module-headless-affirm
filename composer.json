@@ -9,7 +9,9 @@
   },
   "suggest": {},
   "type": "magento2-module",
-  "license": [],
+  "license": [
+    "MIT"
+  ],
   "autoload": {
     "files": [
       "registration.php"
