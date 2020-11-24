@@ -1,5 +1,5 @@
 {
-  "name": "frontcommerce/headless-affirm",
+  "name": "front-commerce-magento/module-headless-affirm",
   "description": "Headless integration for Affirm Payments",
   "version": "1.0.0",
   "require": {
