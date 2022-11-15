@@ -3,6 +3,7 @@
 namespace FrontCommerce\HeadlessAffirm\Model;
 
 use Astound\Affirm\Helper\FinancingProgram;
+use Astound\Affirm\Logger\Logger;
 use Astound\Affirm\Model\AffirmCheckoutManager;
 use FrontCommerce\HeadlessAffirm\Api\AffirmHeadlessCheckoutManagerInterface;
 use Magento\Checkout\Model\Session;
@@ -35,7 +36,8 @@ class AffirmHeadlessCheckoutManager extends AffirmCheckoutManager implements Aff
         FinancingProgram $helper,
         \Astound\Affirm\Model\Config $affirmConfig,
         CollectionFactory $quotePaymentCollectionFactory,
-        ConfigInterfaceFactory $configFactory
+        ConfigInterfaceFactory $configFactory,
+        Logger $logger
     ) {
         parent::__construct(
             $checkoutSession,
@@ -44,7 +46,8 @@ class AffirmHeadlessCheckoutManager extends AffirmCheckoutManager implements Aff
             $moduleResource,
             $objectManager,
             $helper,
-            $affirmConfig
+            $affirmConfig,
+            $logger
         );
         $this->quotePaymentCollectionFactory = $quotePaymentCollectionFactory;
         $this->configFactory = $configFactory;
