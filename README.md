@@ -13,5 +13,5 @@ This repository follows semantic versioning. It is compatible with versions 3+ o
 
 You can install this module with the following command:
 ```
-composer require front-commerce-magento/module-headless-affirm:1.0.0
+composer require front-commerce-magento/module-headless-affirm:1.1.0
 ```

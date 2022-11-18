@@ -1,7 +1,7 @@
 {
   "name": "front-commerce-magento/module-headless-affirm",
   "description": "Headless integration for Affirm Payments",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "require": {
     "php": "~7.0 || ~8.0",
     "magento/magento-composer-installer": "*",
